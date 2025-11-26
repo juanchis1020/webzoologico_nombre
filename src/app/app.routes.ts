@@ -10,14 +10,15 @@ import { ChatPrivadoComponent } from './components/chatprivado-component/chatpri
 import { GrupoComponent } from './components/grupo-component/grupo-component';
 
 export const routes: Routes = [
+  { path: '', component: HomeiComponent, pathMatch: 'full' },
+
   { path: 'login', component: Login },
   { path: 'signup', component: Signup },
+  { path: 'register', component: RegisterComponent },
 
-  { path: 'register', component: RegisterComponent, pathMatch: 'full' },
-  { path: 'publicacion', component: PublicacionComponent, pathMatch: 'full' },
+  { path: 'publicacion', component: PublicacionComponent },
 
-  { path: 'grupo', component: GrupoComponent, pathMatch: 'full' },
-  { path: 'chat', component: ChatPrivadoComponent, pathMatch: 'full' },
-
-  { path: '', component: HomeiComponent, pathMatch: 'full' },
+  // Rutas que tú necesitabas
+  { path: 'chat', component: ChatPrivadoComponent },
+  { path: 'grupo', component: GrupoComponent },
 ]; 
