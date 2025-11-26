@@ -1,0 +1,20 @@
+<h2>Grupos de Estudio</h2>
+
+<div>
+  <h3>Crear grupo</h3>
+  <input [(ngModel)]="nombre" placeholder="Nombre">
+  <input [(ngModel)]="descripcion" placeholder="Descripción">
+  <input [(ngModel)]="tema" placeholder="Tema">
+  <button (click)="crearGrupo()">Crear</button>
+</div>
+
+<hr>
+
+<div>
+  <h3>Grupos existentes</h3>
+  <ul>
+    <li *ngFor="let g of grupos">
+      {{ g.nombre }} - {{ g.tema }}
+    </li>
+  </ul>
+</div> 

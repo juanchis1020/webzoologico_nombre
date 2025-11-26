@@ -1,0 +1,25 @@
+<h2>Chat Privado</h2>
+
+<div class="container">
+
+  <div class="lista">
+    <h3>Chats</h3>
+    <ul>
+      <li *ngFor="let c of chats" (click)="seleccionarChat(c)">
+        {{ c.participantes.join(', ') }}
+      </li>
+    </ul>
+  </div>
+
+  <div class="chat" *ngIf="chatSeleccionado">
+    <h3>Mensajes</h3>
+
+    <div *ngFor="let m of chatSeleccionado.mensajes">
+      <strong>{{ m.emisor }}:</strong> {{ m.texto }}
+    </div>
+
+    <input [(ngModel)]="mensaje" placeholder="Escribe un mensaje">
+    <button (click)="enviarMensaje()">Enviar</button>
+  </div>
+
+</div> 
