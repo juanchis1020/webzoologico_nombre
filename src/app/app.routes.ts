@@ -8,10 +8,9 @@ import { ChatPrivadoComponent } from './components/chatprivado-component/chatpri
 import { GrupoComponent } from './components/grupo-component/grupo-component';
 
 export const routes: Routes = [
-  { path: 'chat', component: ChatPrivadoComponent },
-  { path: 'grupo', component: GrupoComponent },
-
   { path: 'register', component: RegisterComponent, pathMatch: 'full' },
   { path: 'publicacion', component: PublicacionComponent, pathMatch: 'full' },
+  { path: 'grupo', component: GrupoComponent, pathMatch: 'full' },
+  { path: 'chat', component: ChatPrivadoComponent, pathMatch: 'full' },
   { path: '', component: HomeiComponent, pathMatch: 'full' }
 ]; 
