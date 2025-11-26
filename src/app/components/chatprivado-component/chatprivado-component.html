@@ -1,25 +1,35 @@
-<h2>Chat Privado</h2>
+<div class="chat-wrapper">
 
-<div class="container">
+  <h2 class="chat-title">Chat Privado</h2>
 
-  <div class="lista">
-    <h3>Chats</h3>
-    <ul>
-      <li *ngFor="let c of chats" (click)="seleccionarChat(c)">
-        {{ c.participantes.join(', ') }}
-      </li>
-    </ul>
-  </div>
+  <div class="container-chat">
 
-  <div class="chat" *ngIf="chatSeleccionado">
-    <h3>Mensajes</h3>
+    <!-- LISTA DE CHATS -->
+    <div class="lista-chat">
+      <h3 class="subtitle-chat">Chats</h3>
 
-    <div *ngFor="let m of chatSeleccionado.mensajes">
-      <strong>{{ m.emisor }}:</strong> {{ m.texto }}
+      <ul class="lista-ul-chat">
+        <li class="chat-item" 
+            *ngFor="let c of chats" 
+            (click)="seleccionarChat(c)">
+          {{ c.participantes.join(', ') }}
+        </li>
+      </ul>
     </div>
 
-    <input [(ngModel)]="mensaje" placeholder="Escribe un mensaje">
-    <button (click)="enviarMensaje()">Enviar</button>
+    <!-- CHAT SELECCIONADO -->
+    <div class="chat-box" *ngIf="chatSeleccionado">
+      <h3 class="subtitle-chat">Mensajes</h3>
+
+      <div class="mensaje" *ngFor="let m of chatSeleccionado.mensajes">
+        <strong>{{ m.emisor }}:</strong> {{ m.texto }}
+      </div>
+
+      <input class="input-chat" [(ngModel)]="mensaje" placeholder="Escribe un mensaje">
+
+      <button class="btn-chat" (click)="enviarMensaje()">Enviar</button>
+    </div>
+
   </div>
 
 </div> 
