@@ -1,22 +1,38 @@
-<!-- NAVBAR UNIVERSITARIA -->
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background: rgba(0,0,0,0.35); backdrop-filter: blur(6px);">
+<!-- 1. BARRA DE NAVEGACIÓN con Botones de Autenticación (Superior Derecha) -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: rgba(0, 0, 0, 0.2);">
     <div class="container-fluid">
+<<<<<<< HEAD
 
         <!-- LOGO / MARCA -->
         <a class="navbar-brand fw-bold ms-3" href="#">
-            KonradConnect
-            <span class="text-info">•</span>
+            KonradConnect <span class="text-info">•</span>
+=======
+        <!-- Título / Marca del Restaurante -->
+        <a class="navbar-brand h1 mb-0 ms-3" href="#">
+            <span style="font-weight: 700;">SABOR ÚNICO</span>
+>>>>>>> 47de7c234be81fa338b755e938fad9341176aa26
         </a>
 
-        <!-- BOTONES DERECHA -->
+        <!-- Contenedor de Botones a la Derecha -->
         <div class="ms-auto me-3">
-            <a href="login" class="btn btn-light btn-sm me-2 shadow-sm px-3">Iniciar Sesión</a>
-            <a href="signup" class="btn btn-outline-light btn-sm shadow-sm px-3">Registrarse</a>
+<<<<<<< HEAD
+            <a routerLink="/login" class="btn btn-light btn-sm me-2 shadow-sm px-3">Iniciar Sesión</a>
+            <a routerLink="/register" class="btn btn-outline-light btn-sm shadow-sm px-3">Registrarse</a>
+=======
+            <!-- Botón de Iniciar Sesión -->
+            <a href="login" id="loginBtn" class="btn btn-light btn-sm me-2 shadow-sm">
+                Iniciar Sesión
+            </a>
+            <!-- Botón de Registro -->
+            <a href="register" id="registerBtn" class="btn btn-outline-light btn-sm shadow-sm">
+                Registrarse
+            </a>
+>>>>>>> 47de7c234be81fa338b755e938fad9341176aa26
         </div>
     </div>
 </nav>
 
-
+<<<<<<< HEAD
 <!-- CONTENIDO PRINCIPAL DEL HOME -->
 <section class="d-flex align-items-center justify-content-center" style="min-height: 100vh; padding-top: 80px;">
 
@@ -26,31 +42,37 @@
             Conéctate con tu Universidad
         </h1>
 
+=======
+<!-- 2. CONTENIDO PRINCIPAL DE BIENVENIDA (Centrado) -->
+<div class="d-flex align-items-center justify-content-center" style="min-height: 100vh;">
+    <div class="text-center text-white p-5 welcome-content shadow-lg mx-3" style="max-width: 800px;">
+        <h1 class="display-3 font-weight-bold mb-4">¡Bienvenidos a Sabor Único!</h1>
+>>>>>>> 47de7c234be81fa338b755e938fad9341176aa26
         <p class="lead mb-4">
-            Bienvenido a <strong>KonradConnect</strong>, la red social oficial de nuestra universidad.
-            Un espacio para compartir experiencias, publicaciones, grupos de estudio y mucho más.
+            Descubre un viaje de sabores en nuestro restaurante. La autenticidad y la pasión se unen en cada plato.
         </p>
+<<<<<<< HEAD
 
         <p class="mb-4">
-            Únete a miles de estudiantes que ya están creando comunidad.
+            Usa los botones de arriba para iniciar sesión o registrarte.
+            O accede directamente a los nuevos módulos del proyecto:
         </p>
 
-        <!-- BOTONES PRINCIPALES -->
-        <div class="d-flex flex-column flex-md-row gap-3 justify-content-center mt-4">
+        <!-- 🔥 BOTONES A CHAT Y GRUPOS -->
+        <div class="d-flex flex-column align-items-center gap-3 mb-4">
 
-            <a href="signup" class="btn btn-info btn-lg text-dark fw-semibold shadow px-4 py-2">
-                Crear Cuenta
+            <a routerLink="/chat" class="btn btn-primary btn-lg shadow-sm w-75">
+                Ir al Chat Privado
             </a>
 
-            <a href="login" class="btn btn-outline-light btn-lg fw-semibold shadow px-4 py-2">
-                Ya tengo una cuenta
+            <a routerLink="/grupo" class="btn btn-success btn-lg shadow-sm w-75">
+                Ver Grupos de Estudio
             </a>
 
         </div>
 
     </div>
 </section>
-
 
 <!-- ESTILOS PERSONALIZADOS -->
 <style>
@@ -67,4 +89,16 @@
         backdrop-filter: blur(6px);
         border: 1px solid rgba(255,255,255,0.1);
     }
-</style>
+</style> 
+=======
+        <p class="mb-5">
+            Utiliza los botones de arriba para acceder a tu cuenta o registrarte, y haz clic en el botón de abajo para
+            explorar nuestro menú.
+        </p>
+        <!-- Botón de acción principal -->
+        <a href="#" class="btn btn-warning btn-lg shadow-sm">
+            Explorar Nuestro Menú
+        </a>
+    </div>
+</div>
+>>>>>>> 47de7c234be81fa338b755e938fad9341176aa26

@@ -1,35 +1,60 @@
-<div class="chat-wrapper">
+<h2 class="text-center mt-4 mb-4">Chat Privado</h2>
 
-  <h2 class="chat-title">Chat Privado</h2>
+<div class="container">
 
-  <div class="container-chat">
+  <div class="row">
 
-    <!-- LISTA DE CHATS -->
-    <div class="lista-chat">
-      <h3 class="subtitle-chat">Chats</h3>
+    <!-- Lista de Chats -->
+    <div class="col-md-4 mb-3">
+      <div class="card shadow-sm">
+        <div class="card-body">
 
-      <ul class="lista-ul-chat">
-        <li class="chat-item" 
-            *ngFor="let c of chats" 
-            (click)="seleccionarChat(c)">
-          {{ c.participantes.join(', ') }}
-        </li>
-      </ul>
+          <h3 class="h6 text-primary mb-3">Chats</h3>
+
+          <ul class="list-group">
+            <li 
+              *ngFor="let c of chats" 
+              class="list-group-item list-group-item-action"
+              (click)="seleccionarChat(c)"
+              style="cursor: pointer;"
+            >
+              {{ c.participantes.join(', ') }}
+            </li>
+          </ul>
+
+        </div>
+      </div>
     </div>
 
-    <!-- CHAT SELECCIONADO -->
-    <div class="chat-box" *ngIf="chatSeleccionado">
-      <h3 class="subtitle-chat">Mensajes</h3>
+    <!-- Chat seleccionado -->
+    <div class="col-md-8" *ngIf="chatSeleccionado">
 
-      <div class="mensaje" *ngFor="let m of chatSeleccionado.mensajes">
-        <strong>{{ m.emisor }}:</strong> {{ m.texto }}
+      <div class="card shadow-sm">
+        <div class="card-body">
+
+          <h3 class="h6 text-primary mb-3">Mensajes</h3>
+
+          <div class="mb-3" style="max-height: 300px; overflow-y: auto;">
+            <div *ngFor="let m of chatSeleccionado.mensajes" class="mb-2">
+              <strong>{{ m.emisor }}:</strong> {{ m.texto }}
+            </div>
+          </div>
+
+          <div class="input-group">
+            <input 
+              class="form-control"
+              [(ngModel)]="mensaje"
+              placeholder="Escribe un mensaje"
+            >
+            <button class="btn btn-primary" (click)="enviarMensaje()">
+              Enviar
+            </button>
+          </div>
+
+        </div>
       </div>
 
-      <input class="input-chat" [(ngModel)]="mensaje" placeholder="Escribe un mensaje">
-
-      <button class="btn-chat" (click)="enviarMensaje()">Enviar</button>
     </div>
 
   </div>
-
 </div> 
