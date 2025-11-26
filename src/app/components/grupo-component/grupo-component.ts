@@ -1,44 +1,49 @@
 import { Component } from '@angular/core';
-import { GruposService } from '../../services/grupo-service';
+import { CommonModule } from '@angular/common';   // Necesario para *ngIf y *ngFor
+import { FormsModule } from '@angular/forms';     // Necesario para [(ngModel)]
+import { GrupoService } from '../../services/grupo-service';
 
 @Component({
-  selector: 'app-grupos',
-  templateUrl: './grupos-component.html',
-  styleUrls: ['./grupos-component.css']
+  selector: 'app-grupo',
+  standalone: true,
+  imports: [CommonModule, FormsModule],  // <-- IMPORTANTE
+  templateUrl: './grupo-component.html',
+  styleUrls: ['./grupo-component.css']
 })
-export class GruposComponent {
+export class GrupoComponent {
 
-  grupos: any[] = [];
   nombre = "";
   descripcion = "";
   tema = "";
-  creador = "UsuarioX";
+  grupos: any[] = [];
 
-  constructor(private gruposService: GruposService) {}
+  constructor(private grupoService: GrupoService) {}
 
   ngOnInit(): void {
     this.cargarGrupos();
   }
 
   cargarGrupos() {
-    this.gruposService.obtenerGrupos().subscribe(data => {
+    this.grupoService.obtenerGrupos().subscribe(data => {
       this.grupos = data;
     });
   }
 
   crearGrupo() {
-    const nuevo = {
+    if (!this.nombre.trim() || !this.tema.trim()) return;
+
+    const nuevoGrupo = {
       nombre: this.nombre,
       descripcion: this.descripcion,
       tema: this.tema,
-      creador: this.creador
+      creador: "UsuarioX"
     };
 
-    this.gruposService.crearGrupo(nuevo).subscribe(() => {
-      this.cargarGrupos();
+    this.grupoService.crearGrupo(nuevoGrupo).subscribe(() => {
       this.nombre = "";
       this.descripcion = "";
       this.tema = "";
+      this.cargarGrupos();
     });
   }
 } 

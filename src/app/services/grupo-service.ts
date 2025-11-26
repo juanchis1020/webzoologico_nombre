@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class GruposService {
+export class GrupoService {
 
   private apiUrl = 'http://localhost:3000/grupos';
 
