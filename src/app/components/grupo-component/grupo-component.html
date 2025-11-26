@@ -1,27 +1,49 @@
-<div class="container-grupo">
+<h2 class="text-center mt-4 mb-4">Grupos de Estudio</h2>
 
-  <h2 class="title-grupo">Grupos de Estudio</h2>
+<div class="container">
 
-  <div>
-    <h3 class="subtitle-grupo">Crear grupo</h3>
+  <!-- Crear grupo -->
+  <div class="card shadow-sm mb-4">
+    <div class="card-body">
 
-    <input class="input-grupo" [(ngModel)]="nombre" placeholder="Nombre">
-    <input class="input-grupo" [(ngModel)]="descripcion" placeholder="Descripción">
-    <input class="input-grupo" [(ngModel)]="tema" placeholder="Tema">
+      <h3 class="h5 mb-3 text-primary">Crear grupo</h3>
 
-    <button class="btn-grupo" (click)="crearGrupo()">Crear</button>
+      <div class="row g-3">
+
+        <div class="col-md-4">
+          <input class="form-control" [(ngModel)]="nombre" placeholder="Nombre">
+        </div>
+
+        <div class="col-md-4">
+          <input class="form-control" [(ngModel)]="descripcion" placeholder="Descripción">
+        </div>
+
+        <div class="col-md-4">
+          <input class="form-control" [(ngModel)]="tema" placeholder="Tema">
+        </div>
+
+      </div>
+
+      <button class="btn btn-success mt-3 w-100" (click)="crearGrupo()">
+        Crear Grupo
+      </button>
+
+    </div>
   </div>
 
-  <hr class="divider-grupo">
+  <!-- Lista de grupos -->
+  <div class="card shadow-sm">
+    <div class="card-body">
 
-  <div>
-    <h3 class="subtitle-grupo">Grupos existentes</h3>
+      <h3 class="h5 mb-3 text-primary">Grupos existentes</h3>
 
-    <ul class="lista-grupos">
-      <li class="grupo-card" *ngFor="let g of grupos">
-        <strong>{{ g.nombre }}</strong> — {{ g.tema }}
-      </li>
-    </ul>
+      <ul class="list-group">
+        <li *ngFor="let g of grupos" class="list-group-item">
+          <strong>{{ g.nombre }}</strong> — {{ g.tema }}
+        </li>
+      </ul>
+
+    </div>
   </div>
 
 </div> 
