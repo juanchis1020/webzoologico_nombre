@@ -1,20 +1,27 @@
-<h2>Grupos de Estudio</h2>
+<div class="container-grupo">
 
-<div>
-  <h3>Crear grupo</h3>
-  <input [(ngModel)]="nombre" placeholder="Nombre">
-  <input [(ngModel)]="descripcion" placeholder="Descripción">
-  <input [(ngModel)]="tema" placeholder="Tema">
-  <button (click)="crearGrupo()">Crear</button>
-</div>
+  <h2 class="title-grupo">Grupos de Estudio</h2>
 
-<hr>
+  <div>
+    <h3 class="subtitle-grupo">Crear grupo</h3>
 
-<div>
-  <h3>Grupos existentes</h3>
-  <ul>
-    <li *ngFor="let g of grupos">
-      {{ g.nombre }} - {{ g.tema }}
-    </li>
-  </ul>
+    <input class="input-grupo" [(ngModel)]="nombre" placeholder="Nombre">
+    <input class="input-grupo" [(ngModel)]="descripcion" placeholder="Descripción">
+    <input class="input-grupo" [(ngModel)]="tema" placeholder="Tema">
+
+    <button class="btn-grupo" (click)="crearGrupo()">Crear</button>
+  </div>
+
+  <hr class="divider-grupo">
+
+  <div>
+    <h3 class="subtitle-grupo">Grupos existentes</h3>
+
+    <ul class="lista-grupos">
+      <li class="grupo-card" *ngFor="let g of grupos">
+        <strong>{{ g.nombre }}</strong> — {{ g.tema }}
+      </li>
+    </ul>
+  </div>
+
 </div> 
